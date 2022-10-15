@@ -24,7 +24,7 @@
 	                                &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC   &kp RET  &kp SPACE  &kp TAB &kp BSPC &kp RALT
 			>;
 
-			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+			sensor-bindings = <&inc_dec_kp LC(Z) LC(LS(Z)) &inc_dec_kp K_UNDO C_AC_UNDO>;
 		};
 	};
 };
