@@ -58,7 +58,7 @@
 		edit_layer {
 			bindings = <
 	&trans    &trans          &trans       &trans         &trans &trans                                        &trans      &trans  &trans      &trans     &trans   &trans
-	&trans    &hm LCTRL LC(A) &hm LSHFT LC(S) &hm LALT LC(D) &kp LC(F) &trans                                           &kp LS(TAB) &kp LEFT  &kp UP      &kp RIGHT   &kp TAB        &trans
+	&trans    &trans &trans &trans &trans &trans                                           &trans &kp LEFT  &kp UP      &kp RIGHT   &kp TAB        &trans
 	&trans    &kp LC(Z)       &kp LC(X)       &kp LC(C)      &kp LC(V) &trans   &trans    &trans    &trans    &trans    &trans      &kp BSPC  &kp DOWN    &kp DEL     &K_SCROLL_DOWN &kp PG_DN
 	                                          &trans         &trans    &trans   &trans    &trans    &trans    &trans    &trans      &trans    &trans
 			>;
