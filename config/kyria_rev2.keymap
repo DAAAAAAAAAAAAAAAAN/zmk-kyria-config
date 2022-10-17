@@ -59,7 +59,7 @@
 			bindings = <
 	&trans    &trans          &trans       &trans         &trans &trans                                        &trans      &trans  &trans      &trans     &trans   &trans
 	&trans    &trans &trans &trans &trans &trans                                           &trans &kp LEFT  &kp UP      &kp RIGHT   &kp TAB        &trans
-	&trans    &kp LC(Z)       &kp LC(X)       &kp LC(C)      &kp LC(V) &trans   &trans    &trans    &trans    &trans    &trans      &kp BSPC  &kp DOWN    &kp DEL     &K_SCROLL_DOWN &kp PG_DN
+	&trans    &kp LC(Z)       &kp LC(X)       &kp LC(C)      &kp LC(V) &trans   &trans    &trans    &trans    &trans    &trans      &trans  &trans    &trans     &trans &trans
 	                                          &trans         &trans    &trans   &trans    &trans    &trans    &trans    &trans      &trans    &trans
 			>;
 
