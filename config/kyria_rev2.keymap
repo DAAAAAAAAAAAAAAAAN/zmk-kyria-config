@@ -52,5 +52,37 @@
 
 			sensor-bindings = <&inc_dec_kp LC(Z) LC(LS(Z)) &inc_dec_kp LS(TAB) TAB>;
 		};
+
+
+
+		edit_layer {
+			bindings = <
+	&trans    &trans          &kp LC(W)       &trans         &kp LC(R) &kp LC(T)                                        &trans      &kp HOME  &trans      &kp END     &K_SCROLL_UP   &kp PG_UP
+	&trans    &kp LCTRL LC(A) &kp LSHFT LC(S) &hm LALT LC(D) &kp LC(F) &trans                                           &kp LS(TAB) &kp LEFT  &kp UP      &kp RIGHT   &kp TAB        &trans
+	&trans    &kp LC(Z)       &kp LC(X)       &kp LC(C)      &kp LC(V) &trans   &trans    &trans    &trans    &trans    &trans      &kp BSPC  &kp DOWN    &kp DEL     &K_SCROLL_DOWN &kp PG_DN
+	                                          &trans         &trans    &trans   &trans    &trans    &trans    &trans    &trans      &trans    &trans
+			>;
+
+			sensor-bindings = <&inc_dec_kp LS(TAB) TAB &inc_dec_kp LEFT RIGHT>;
+		};
+
+
+
+		num_layer {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// | `     |  !  |  +  |  [   |  ]   |  =   |                                          |  %   |  7    |  8    |  9   |   *   | /    |
+// | #     |  @  |  _  |  (   |  )   |  -   |                                          |  $   |  4    |  5    |  6   |   +   | ---  |
+// | ~     |  \  |  &  |  {   |  }   |  |   |   ---   |  ---    |  |   ---   |  ---    |  ^   |  1    |  2    |  3   |   -   | ---  |
+//                     | ENC  | ---  | ---  |   ---   |  ---    |  |   ---   |  ---    |  0   |  .    | ---   |
+			bindings = <
+	&kp GRAVE &kp EXCL &kp PLUS  &kp LBKT &kp RBKT &kp EQUAL                             &kp CARET &kp N7 &kp N8 &kp N9 &kp KP_MULTIPLY &kp KP_DIVIDE
+	&kp HASH  &kp AT   &kp UNDER &kp LPAR &kp RPAR &kp MINUS                             &kp PRCNT &kp N4 &kp N5 &kp N6 &kp KP_PLUS &none
+	&kp TILDE &kp BSLH &kp AMPS  &kp LBRC &kp RBRC &kp PIPE &trans &trans  &trans &trans &kp DLLR  &kp N1 &kp N2 &kp N3 &kp KP_MINUS &trans
+	                       &trans  &trans   &trans          &trans &trans  &trans &trans &kp N0    &kp DOT    &trans
+			>;
+
+			sensor-bindings = <&inc_dec_kp LC(LEFT) LC(RIGHT)>;
+		};
+
 	};
 };
