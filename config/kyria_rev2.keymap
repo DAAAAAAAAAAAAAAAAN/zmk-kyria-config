@@ -58,9 +58,9 @@
 
 		edit_layer {
 			bindings = <
-	&trans    &trans          &kp LC(W)       &trans         &kp LC(R) &kp LC(T)                                        &trans      &kp HOME  &trans      &kp END     &trans   &kp PG_UP
-	&trans    &hm LCTRL LC(A) &hm LSHFT LC(S) &hm LALT LC(D) &kp LC(F) &trans                                           &kp LS(TAB) &kp LEFT  &kp UP      &kp RIGHT   &kp TAB  &trans
-	&trans    &kp LC(Z)       &kp LC(X)       &kp LC(C)      &kp LC(V) &trans   &trans    &trans    &trans    &trans    &trans      &kp BSPC  &kp DOWN    &kp DEL     &trans   &kp PG_DN
+	&trans    &trans          &kp LC(W)       &trans         &kp LC(R) &kp LC(T)                                        &trans      &kp HOME  &trans      &kp END     &kp K_SCROLL_UP   &kp PG_UP
+	&trans    &hm LCTRL LC(A) &hm LSHFT LC(S) &hm LALT LC(D) &kp LC(F) &trans                                           &kp LS(TAB) &kp LEFT  &kp UP      &kp RIGHT   &kp TAB           &trans
+	&trans    &kp LC(Z)       &kp LC(X)       &kp LC(C)      &kp LC(V) &trans   &trans    &trans    &trans    &trans    &trans      &kp BSPC  &kp DOWN    &kp DEL     &kp K_SCROLL_DOWN &kp PG_DN
 	                                          &trans         &trans    &trans   &trans    &trans    &trans    &trans    &trans      &trans    &trans
 			>;
 
@@ -99,8 +99,8 @@
             bindings = <
     &trans &kp LT    &kp LBKT  &kp LBRC   &kp LPAR  &kp FSLH                                                  &kp BSLH &kp RPAR  &kp RBRC  &kp RBKT  &kp GT   &trans
     &kp LT &kp HASH  &kp STAR  &kp PLUS   &kp UNDER &kp AT                                                    &kp AMPS &kp MINUS &kp EQUAL &kp CARET &kp DLLR &kp GT
-    &trans &kp PRCNT &kp EXCL  &kp GRAVE  &kp COLON &kp APOS  &gresc  &lt LOWER SPACE  &lt RAISE RET &kp LGUI &kp DQT  &kp SEMI  &kp TILDE &kp QMARK &kp PIPE &trans
-                               &kp C_MUTE &kp TAB   &kp LCTRL &kp TAB &lt LOWER SPACE  &lt RAISE RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP
+    &trans &kp PRCNT &kp EXCL  &kp GRAVE  &kp COLON &kp APOS  &gresc  &trans  &trans &kp LGUI &kp DQT  &kp SEMI  &kp TILDE &kp QMARK &kp PIPE &trans
+                               &kp C_MUTE &kp TAB   &kp LCTRL &kp TAB &trans  &trans &kp BSPC &kp DEL  &kp LALT  &kp C_PP
             >;
 
             sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN  &inc_dec_kp LS(K_SCROLL_UP) LS(K_SCROLL_DOWN)>;
