@@ -5,18 +5,34 @@
  */
 
 
+#define BASE    0
+#define EDIT    1
+#define NUM     2
+#define SYM     3
+#define FUNC    4
+
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/rgb.h>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/ext_power.h>
+
+&left_encoder {
+    resolution = <2>;
+};
+
 
 / {
-	
+	behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
 
     keymap {
 		compatible = "zmk,keymap";
@@ -28,10 +44,10 @@
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT | L SHIFT |  | L SHIFT | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
 //                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
 			bindings = <
-	&kp ESC   &kp Q           &kp W           &kp E          &kp R     &kp T                                            &kp Y       &kp U     &kp I       &kp O       &kp P          &none
-	&kp TAB   &none     &none     &none     &kp F     &kp G                                            &kp H       &kp J     &none  &none &none &kp SQT
-	&kp CAPS  &kp Z           &kp X           &kp C          &kp V     &kp B    &none     &none     &none     &none     &kp N       &kp M     &kp COMMA   &kp DOT     &none       &kp RET
-	                                          &kp LGUI       &none   &none &none     &none   &none   &kp SPACE &none    &none     &none 
+	&kp ESC   &kp Q           &kp W           &kp E          &kp R     &kp T                                            &kp Y       &kp U     &kp I       &kp O       &kp P          &kp BSLH
+	&kp TAB   &hm LCTRL A     &hm LSHFT S     &hm LALT D     &kp F     &kp G                                            &kp H       &kp J     &hm RALT K  &hm RSHFT L &hm RCTRL SEMI &kp SQT
+	&kp CAPS  &kp Z           &kp X           &kp C          &kp V     &kp B    &trans    &trans    &trans    &trans    &kp N       &kp M     &kp COMMA   &kp DOT     &kp FSLH       &kp RET
+	                                          &kp LGUI       &mo NUM   &mo EDIT &trans    &mo SYM   &mo SYM   &kp SPACE &mo FUNC    &trans    &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp LC(Z) LC(LS(Z)) &inc_dec_kp LS(TAB) TAB>;
