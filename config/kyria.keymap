@@ -40,12 +40,12 @@
             bindings = <&kp>, <&kp>;
         };
 
-// ----------------------------------------------------     KEY INDICES     ----------------------------------------------------------
-// |   0  |   1  |  2  |  3   |   4  |  5   |                                          |  6   |   7   |   8   |   9   |   10  |  11  |
-// |  12  |  13  | 14  |  15  |  16  |  17  |                                          |  18  |  19   |  20   |  21   |   22  |  23  |
-// |  24  |  25  | 26  |  27  |  28  |  29  |    30   |   31    |  |   32    |   33    |  34  |  35   |  36   |  37   |   38  |  39  |
-//                     |  40  |  41  |  42  |    43   |   44    |  |   45    |   46    |  47  |  48   |  49   |
-//                        ◌                                                                               ◌    
+//  ___________________________________        KEY INDICES         ___________________________________ 
+// |  0  |  1  |  2  |  3  |  4  |  5  |                          |  6  |  7  |  8  |  9  | 10  | 11  |
+// | 12  | 13  | 14  | 15  | 16  | 17  |                          | 18  | 19  | 20  | 21  | 22  | 23  |
+// | 24  | 25  | 26  | 27  | 28  | 29  | 30  | 31  |  |  32 | 33  | 34  | 35  | 36  | 37  | 38  | 39  |
+//                   | 40  | 41  | 42  | 43  | 44  |  |  45 | 46  | 47  | 48  | 49  |
+//                     ◌                                                         ◌ 
 
         hml: right_hand_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -78,12 +78,12 @@
 		default_layer {
 			bindings = <
 
-// -------------------------------------------------------      BASE      ---------------------------------------------------------
-// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                         |  Y   |   U   |   I   |  O   |   P   |  \  |
-// |  TAB  |  A  |  S  |  D   |  F   |  G   |                                         |  H   |   J   |   K   |  L   |   ;   | RET |
-// |  CAPS | cZ  | sX  | aC   |  V   |  B   |  REPEAT |        |   |        |  REPEAT |  N   |   M   |  a,   | s.   |  c/   |  '  |
-//                     | GUI  | _NUM |_EDIT |    E    |  _SYM  |   |  _SYM  |  SPACE  |_FUNC |  GUI  |  F13  |
-//                   undo ◌ redo                                                                    tabL ◌ tabR 
+//  ___________________________________            BASE            ___________________________________ 
+// | ESC |  Q  |  W  |  E  |  R  |  T  |                          |  Y  |  U  |  I  |  O  |  P  |  \  |
+// | TAB |  A  |  S  |  D  |  F  |  G  |___________    ___________|  H  |  J  |  K  |  L  |  ;  | RET |
+// | CPL | cZ  | sX  | aC  |  V  |  B  | REP |     |  |     | REP |  N  |  M  | a,  | s.  | c/  |  '  |
+//                   | GUI | _NU | _ED |  E  | _SY |  | _SY | SPC | _FN | GUI | F13 |
+//                 undo ◌ redo                                              tabL ◌ tabR
 
 	&kp ESC    &kp Q        &kp W        &kp E       &kp R       &kp T                                                &kp Y       &kp U       &kp I           &kp O         &kp P          &kp BSLH
 	&kp TAB    &kp A        &kp S        &kp D       &kp F       &kp G                                                &kp H       &kp J       &kp K           &kp L         &kp SEMI       &kp RET
@@ -99,12 +99,12 @@
 		edit_layer {
 			bindings = <
 
-// -------------------------------------------------------    TEXT EDIT    ------------------------------------------------------------
-// |       |       | CLOSE  |       |  TAB  |      |                                |        |  HOME |       |  END  | scrl+  | PG_UP |
-// |       |  SEL  |  SAVE  |  DUPE |  FIND |      |                                | FIELD+ |  ←    |   ↑   |  →    | FIELD- |  RET  |
-// |       | cUNDO | sCUT   | aCOPY | PASTE |      |      |      |  |       |       |        |  BSPC |   ↓   |  DEL  | scrl-  | PG_DN |
-//                          |       |       |      |      |      |  |       |       |        |       |       |
-//                              ◌                                                                     ←  ◌  → 
+//  ___________________________________          TEXT EDIT         ___________________________________ 
+// |     |     |CLOSE|     | TAB |     |                          |     |HOME |     | END |scrl+|PG_UP|
+// |     | SEL |SAVE |DUPE |FIND |     |___________    ___________|FLD- |  ←  |  ↑  |  →  |FLD+ | RET |
+// |     |cUNDO|sCUT |aCOPY|PASTE|     |     |     |  |     |     |     |BSPC |  ↓  | DEL |scrl-|PG_DN|
+//                   |     |     |     |     |     |  |     |     |     |     |     |
+//                      ◌                                                      ← ◌ →
 
 	&trans    &trans          &kp LC(W)       &trans         &trans    &kp LC(T)                                        &trans      &kp HOME  &trans      &kp END     &kp K_SCROLL_UP   &kp PG_UP
 	&trans    &kp LC(A)       &kp LC(S)       &kp LC(D)      &kp LC(F) &trans                                           &kp LS(TAB) &kp LEFT  &kp UP      &kp RIGHT   &kp TAB           &kp RET
@@ -120,12 +120,12 @@
 		num_layer {
 			bindings = <
 
-// -------------------------------------------------------     NUMBERS    ------------------------------------------------------------
-// | `     |  !  |  +  |   [   |  ]   |  =   |                                          |  ^   |  7    |  8    |  9   |   *   |  /   |
-// | #     |  @  |  _  |   (   |  )   |  -   |                                          |  %   |  4    |  5    |  6   |   +   |      |
-// | ~     |  \  |  &  |   {   |  }   |  |   |         |         |  |         |         |  $   |  1    |  2    |  3   |   -   |      |
-//                     |       |      |      |         |         |  |         |         |  0   |  .    |       |
-//                         ◌                                                                               ◌    
+//  ___________________________________           NUMBERS         ____________________________________ 
+// |  `  |  !  |  +  |  [  |  ]  |  =  |                          |  ^  |  7  |  8  |  9  |  *  |  /  |
+// |  #  |  @  |  _  |  (  |  )  |  -  |___________    ___________|  %  |  4  |  5  |  6  |  +  |     |
+// |  ~  |  \  |  &  |  {  |  }  |  |  |     |     |  |     |     |  $  |  1  |  2  |  3  |  -  |     |
+//                   |     |     |     |     |     |  |     |     |  0  |  .  |     |
+//                      ◌                                                        ◌ 
 
 	&kp GRAVE &kp EXCL &kp PLUS  &kp LBKT &kp RBKT &kp EQUAL                             &kp CARET &kp N7 &kp N8 &kp N9 &kp KP_MULTIPLY &kp KP_DIVIDE
 	&kp HASH  &kp AT   &kp UNDER &kp LPAR &kp RPAR &kp MINUS                             &kp PRCNT &kp N4 &kp N5 &kp N6 &kp KP_PLUS     &trans    
@@ -142,12 +142,12 @@
             label = "Modifier";
             bindings = <
 
-// -------------------------------------------------------     SYMBOLS     -----------------------------
-// |     |  <  |  [  |  {  |  (  |  /  |                           |  \  |  )  |  }  |  ]  |  >  |     |
-// |  <  |  #  |  *  |  +  |  _  |  @  |                           |  &  |  -  |  =  |  ^  |  $  |  >  |
-// |     |  %  |  !  |  `  |  :  |  '  |  `  |     |  |     |      |  "  |  ;  |  ~  |  ?  |  |  |     |
-//                   | MUT |     |     |     |     |  |     |      |     |     | F14 |
-//                      ◌                                                         ◌    
+//  ___________________________________           SYMBOLS          ___________________________________ 
+// |     |  <  |  [  |  {  |  (  |  /  |                          |  \  |  )  |  }  |  ]  |  >  |     |
+// |  <  |  #  |  *  |  +  |  _  |  @  |___________    ___________|  &  |  -  |  =  |  ^  |  $  |  >  |
+// |     |  %  |  !  |  `  |  :  |  '  |  `  |     |  |     |     |  "  |  ;  |  ~  |  ?  |  |  |     |
+//                   | MUT |     |     |     |     |  |     |     |     |     | F14 |
+//                      ◌                                                        ◌ 
 
     &trans &kp LT    &kp LBKT  &kp LBRC   &kp LPAR  &kp FSLH                                &kp BSLH &kp RPAR  &kp RBRC  &kp RBKT  &kp GT   &trans
     &kp LT &kp HASH  &kp STAR  &kp PLUS   &kp UNDER &kp AT                                  &kp AMPS &kp MINUS &kp EQUAL &kp CARET &kp DLLR &kp GT
@@ -163,12 +163,12 @@
 		function_layer {
 			bindings = <
 
-// -------------------------------------------------------     FUNCTIONS     ----------------------------------------------------
-// | TASK  |  F2 | mute| V+   | stp  |   @  |                                       | F12  |  F7   |  F8   |  F9  | Print|      |
-// | SNIP  | caps| Prev| V-   | Next |   @p |                                       | F11  |  F4   |  F5   |  F6  | Ins  |      |
-// | CAPSW | /Ble| Ble0| Ble1 | Ble2 | Ble3 |  Ble4  |         |  |         |       | F10  |  F1   |  F2   |  F3  |      |      |
-//                     | PLAYP|      |      |        |         |  |         |       |      |       |       |
-//                         ◌                                                                           ◌    
+//  ___________________________________          FUNCTIONS         ___________________________________ 
+// |TASK | F2  |mute | V+  | stp |  @  |                          | F12 | F7  | F8  | F9  |Print|     |
+// |SNIP |caps |Prev | V-  |Next | @p  |___________    ___________| F11 | F4  | F5  | F6  | Ins |     |
+// |CAPSW|/Ble |Ble0 |Ble1 |Ble2 |Ble3 |Ble4 |     |  |     |     | F10 | F1  | F2  | F3  |     |     |
+//                   |PLAYP|     |     |     |     |  |     |     |     |     |     |
+//                      ◌                                                        ◌ 
 
 	&kp LC(LS(ESC)) &kp F2     &kp C_MUTE   &kp C_VOL_UP &kp C_STOP   &trans                                                 &kp F12 &kp F7 &kp F8 &kp F9 &kp PSCRN &trans
 	&kp LS(LG(S))   &kp CAPS   &kp C_PREV   &kp C_VOL_DN &kp C_NEXT   &trans                                                 &kp F11 &kp F4 &kp F5 &kp F6 &kp INS   &trans
@@ -184,12 +184,12 @@
 		xxx_layer {
 			bindings = <
 
-// -------------------------------------------------------     XXXXXX     ------------------------------------------------------------
-// |      |      |     |      |      |      |                                          |      |       |       |       |       |      |
-// |      |      |     |      |      |      |                                          |      |       |       |       |       |      |
-// |      |      |     |      |      |      |         |         |  |         |         |      |       |       |       |       |      |
-//                     |      |      |      |         |         |  |         |         |      |       |       |
-//                        ◌                                                                               ◌    
+//  ___________________________________           XXXXXX           ___________________________________ 
+// |     |     |     |     |     |     |                          |     |     |     |     |     |     |
+// |     |     |     |     |     |     |___________    ___________|     |     |     |     |     |     |
+// |     |     |     |     |     |     |     |     |  |     |     |     |     |     |     |     |     |
+//                   |     |     |     |     |     |  |     |     |     |     |     |
+//                      ◌                                                        ◌ 
 
 	&trans    &trans          &trans          &trans         &trans    &trans                                           &trans      &trans    &trans      &trans      &trans         &trans
 	&trans    &trans          &trans          &trans         &trans    &trans                                           &trans      &trans    &trans      &trans      &trans         &trans
