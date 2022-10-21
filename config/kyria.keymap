@@ -48,16 +48,16 @@
 			bindings = <
 
 // -------------------------------------------------------      BASE      ---------------------------------------------------------
-// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                         |  Y   |  U    |   I   |  O   |   P   |  \  |
-// |  TAB  | cA  | sS  | aD   |  F   |  G   |                                         |  H   |  J    |  aK   | sL   |  c;   | RET |
-// | CAPSW |  Z  |  X  |  C   |  V   |  B   |  REPEAT |        |   |        |  REPEAT |  N   |  M    |   ,   |  .   |   /   |  '  |
-//                     | GUI  | _NUM |_EDIT |         |  _SYM  |   |  _SYM  |  SPACE  |_FUNC |       |  F13  |
+// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                         |  Y   |   U   |   I   |  O   |   P   |  \  |
+// |  TAB  | cA  | sS  | aD   |  F   |  G   |                                         |  H   |   J   |  aK   | sL   |  c;   | RET |
+// | CAPSW |  Z  |  X  |  C   |  V   |  B   |  REPEAT |        |   |        |  REPEAT |  N   |   M   |   ,   |  .   |   /   |  '  |
+//                     | GUI  | _NUM |_EDIT |         |  _SYM  |   |  _SYM  |  SPACE  |_FUNC |  GUI  |  F13  |
 //                   undo ◌ redo                                                                    tabL ◌ tabR 
 
 	&kp ESC    &kp Q       &kp W       &kp E      &kp R     &kp T                                              &kp Y       &kp U     &kp I       &kp O       &kp P          &kp BSLH
 	&kp TAB    &hm LCTRL A &hm LSHFT S &hm LALT D &kp F     &kp G                                              &kp H       &kp J     &hm RALT K  &hm RSHFT L &hm RCTRL SEMI &kp RET
 	&caps_word &kp Z       &kp X       &kp C      &kp V     &kp B    &key_repeat &trans    &trans  &key_repeat &kp N       &kp M     &kp COMMA   &kp DOT     &kp FSLH       &kp SQT
-	                                   &kp LGUI   &mo NUM   &mo EDIT &trans      &mo SYM   &mo SYM &kp SPACE   &mo FUNC    &kp LGUI  &kp F13
+	                                   &kp LGUI   &mo NUM   &mo EDIT &trans      &mo SYM   &mo SYM &kp SPACE   &mo FUNC    &kp RGUI  &kp F13
 			>;
 
 			sensor-bindings = <&inc_dec_kp LC(Z) LC(LS(Z)) &inc_dec_kp LS(TAB) TAB>;
@@ -135,14 +135,14 @@
 // -------------------------------------------------------     FUNCTIONS     ----------------------------------------------------
 // |       |  F2 | mute| V+   | stp  |   @  |                                       | F12  |  F7   |  F8   |  F9  | Print|      |
 // |       | caps| Prev| V-   | Next |   @p |                                       | F11  |  F4   |  F5   |  F6  | Ins  |      |
-// |       | /Ble| Ble0| Ble1 | Ble2 | Ble3 |  Ble4  |         |  |         |       | F10  |  F1   |  F2   |  F3  |      |      |
+// | SNIP  | /Ble| Ble0| Ble1 | Ble2 | Ble3 |  Ble4  |         |  |         |       | F10  |  F1   |  F2   |  F3  |      |      |
 //                     | PLAYP|      |      |        |         |  |         |       |      |       |       |
 //                         ◌                                                                           ◌    
 
-	&trans   &kp F2     &kp C_MUTE   &kp C_VOL_UP &kp C_STOP   &trans                                                 &kp F12 &kp F7 &kp F8 &kp F9 &kp PSCRN &trans
-	&trans   &kp CAPS   &kp C_PREV   &kp C_VOL_DN &kp C_NEXT   &trans                                                 &kp F11 &kp F4 &kp F5 &kp F6 &kp INS   &trans
-	&kp CAPS &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &out OUT_TOG  &trans  &trans &kp F10 &kp F1 &kp F2 &kp F3 &trans    &trans
-	                                 &kp C_PP     &trans       &trans       &trans       &trans        &trans  &trans &trans  &trans &trans
+	&trans        &kp F2     &kp C_MUTE   &kp C_VOL_UP &kp C_STOP   &trans                                                 &kp F12 &kp F7 &kp F8 &kp F9 &kp PSCRN &trans
+	&trans        &kp CAPS   &kp C_PREV   &kp C_VOL_DN &kp C_NEXT   &trans                                                 &kp F11 &kp F4 &kp F5 &kp F6 &kp INS   &trans
+	&kp LS(LG(S)) &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &out OUT_TOG  &trans  &trans &kp F10 &kp F1 &kp F2 &kp F3 &trans    &trans
+	                                      &kp C_PP     &trans       &trans       &trans       &trans        &trans  &trans &trans  &trans &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp F24 F24 &inc_dec_kp F24 F24>;
