@@ -80,14 +80,14 @@
 
 // -------------------------------------------------------      BASE      ---------------------------------------------------------
 // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                         |  Y   |   U   |   I   |  O   |   P   |  \  |
-// |  TAB  |  A  |  S  |  D   |  F   |  G   |                                         |  H   |   J   |  aK   | sL   |  c;   | RET |
-// |  CAPS |  Z  |  X  | cC   | sV   | aB   |  REPEAT |        |   |        |  REPEAT | aN   |  sM   |  c,   |  .   |   /   |  '  |
+// |  TAB  |  A  |  S  |  D   |  F   |  G   |                                         |  H   |   J   |   K   |  L   |   ;   | RET |
+// |  CAPS | cZ  | sX  | aC   |  V   |  B   |  REPEAT |        |   |        |  REPEAT |  N   |   M   |  a,   | s.   |  c/   |  '  |
 //                     | GUI  | _NUM |_EDIT |  SPACE  |  _SYM  |   |  _SYM  |  SPACE  |_FUNC |  GUI  |  F13  |
 //                   undo ◌ redo                                                                    tabL ◌ tabR 
 
-	&kp ESC    &kp Q        &kp W        &kp E       &kp R       &kp T                                                &kp Y       &kp U       &kp I           &kp O   &kp P    &kp BSLH
-	&kp TAB    &kp A        &kp S        &kp D       &kp F       &kp G                                                &kp H       &kp J       &kp K           &kp L   &kp SEMI &kp RET
-	&kp CAPS   &kp Z        &kp X        &hm LCTRL C &hm LSHFT V &hm LALT B &key_repeat &trans    &trans  &key_repeat &hm RALT N  &hm RSHFT M &hm RCTRL COMMA &kp DOT &kp FSLH &kp SQT
+	&kp ESC    &kp Q        &kp W        &kp E       &kp R       &kp T                                                &kp Y       &kp U       &kp I           &kp O         &kp P          &kp BSLH
+	&kp TAB    &kp A        &kp S        &kp D       &kp F       &kp G                                                &kp H       &kp J       &kp K           &kp L         &kp SEMI       &kp RET
+	&kp CAPS   &hm LCTRL Z  &hm LSHFT X  &hm LALT C  &kp V       &kp B      &key_repeat &trans    &trans  &key_repeat &kp N       &kp M       &hm RALT COMMA  &hm RSHFT DOT &hm RCTRL FSLH &kp SQT
 	                                     &kp LGUI    &mo NUM     &mo EDIT   &kp SPACE   &mo SYM   &mo SYM &kp SPACE   &mo FUNC    &kp RGUI    &kp F13
 			>;
 
@@ -100,15 +100,15 @@
 			bindings = <
 
 // -------------------------------------------------------    TEXT EDIT    ------------------------------------------------------------
-// |       |       |        |       |       |      |                                |        |  HOME |       |  END  | scrl+  | PG_UP |
-// |       | cSEL  | sSAVE  | aDUPE | FIND  |      |                                | FIELD+ |  ←    |   ↑   |  →    | FIELD- |  RET  |
-// |       |  UNDO |  CUT   |  COPY | PASTE |      |      |      |  |       |       |        |  BSPC |   ↓   |  DEL  | scrl-  | PG_DN |
+// |       |       | CLOSE  |       |  TAB  |      |                                |        |  HOME |       |  END  | scrl+  | PG_UP |
+// |       |  SEL  |  SAVE  |  DUPE |  FIND |      |                                | FIELD+ |  ←    |   ↑   |  →    | FIELD- |  RET  |
+// |       | cUNDO | sCUT   | aCOPY | PASTE |      |      |      |  |       |       |        |  BSPC |   ↓   |  DEL  | scrl-  | PG_DN |
 //                          |       |       |      |      |      |  |       |       |        |       |       |
 //                              ◌                                                                     ←  ◌  → 
 
-	&trans    &trans          &trans          &trans         &trans    &trans                                           &trans      &kp HOME  &trans      &kp END     &kp K_SCROLL_UP   &kp PG_UP
-	&trans    &hm LCTRL LC(A) &hm LSHFT LC(S) &hm LALT LC(D) &kp LC(F) &trans                                           &kp LS(TAB) &kp LEFT  &kp UP      &kp RIGHT   &kp TAB           &kp RET
-	&trans    &kp LC(Z)       &kp LC(X)       &kp LC(C)      &kp LC(V) &trans   &trans    &trans    &trans    &trans    &trans      &kp BSPC  &kp DOWN    &kp DEL     &kp K_SCROLL_DOWN &kp PG_DN
+	&trans    &trans          &kp LC(W)       &trans         &trans    &kp LC(T)                                        &trans      &kp HOME  &trans      &kp END     &kp K_SCROLL_UP   &kp PG_UP
+	&trans    &kp LC(A)       &kp LC(S)       &kp LC(D)      &kp LC(F) &trans                                           &kp LS(TAB) &kp LEFT  &kp UP      &kp RIGHT   &kp TAB           &kp RET
+	&trans    &hm LCTRL LC(Z) &hm LSHFT LC(X) &hm LALT LC(C) &kp LC(V) &trans   &trans    &trans    &trans    &trans    &trans      &kp BSPC  &kp DOWN    &kp DEL     &kp K_SCROLL_DOWN &kp PG_DN
 	                                          &trans         &trans    &trans   &trans    &trans    &trans    &trans    &trans      &trans    &trans
 			>;
 
