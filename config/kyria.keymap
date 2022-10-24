@@ -36,7 +36,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
 
@@ -80,15 +80,15 @@
 
 //  ___________________________________            BASE            ___________________________________ 
 // | ESC |  Q  |  W  |  E  |  R  |  T  |                          |  Y  |  U  |  I  |  O  |  P  |  \  |
-// | TAB |  A  |  S  |  D  |  F  |  G  |___________    ___________|  H  |  J  |  K  |  L  |  ;  | RET |
-// | CPL | cZ  | sX  | aC  |  V  |  B  | REP |     |  |     | REP |  N  |  M  | a,  | s.  | c/  |  '  |
-//                   | GUI | _NU | _ED |  E  | _SY |  | _SY | SPC | _FN | GUI | F13 |
+// | _NU |  A  |  S  |  D  |  F  |  G  |___________    ___________|  H  |  J  |  K  |  L  |  ;  | RET |
+// |CAPS | cZ  | sX  | aC  |  V  |  B  | REP |     |  |     | REP |  N  |  M  | a,  | s.  | c/  |  '  |
+//                   |     | _FN | _ED |  E  | _SY |  | _SY | SPC |     | GUI | F13 |
 //                 undo ◌ redo                                              tabL ◌ tabR
 
 	&kp ESC    &kp Q        &kp W        &kp E       &kp R       &kp T                                                &kp Y       &kp U       &kp I           &kp O         &kp P          &kp BSLH
-	&kp TAB    &kp A        &kp S        &kp D       &kp F       &kp G                                                &kp H       &kp J       &kp K           &kp L         &kp SEMI       &kp RET
+	&mo NUM    &kp A        &kp S        &kp D       &kp F       &kp G                                                &kp H       &kp J       &kp K           &kp L         &kp SEMI       &kp RET
 	&kp CAPS   &hm LCTRL Z  &hm LSHFT X  &hm LALT C  &kp V       &kp B      &key_repeat &trans    &trans  &key_repeat &kp N       &kp M       &hm RALT COMMA  &hm RSHFT DOT &hm RCTRL FSLH &kp SQT
-	                                     &kp LGUI    &mo NUM     &mo EDIT   &kp E       &mo SYM   &mo SYM &kp SPACE   &mo FUNC    &kp RGUI    &kp F13
+	                                     &none       &mo FUNC    &mo EDIT   &kp E       &mo SYM   &mo SYM &kp SPACE   &mo FUNC    &kp RGUI    &kp F13
 			>;
 
 			sensor-bindings = <&inc_dec_kp LC(Z) LC(LS(Z)) &inc_dec_kp LS(TAB) TAB>;
@@ -100,19 +100,19 @@
 			bindings = <
 
 //  ___________________________________          TEXT EDIT         ___________________________________ 
-// |     |     |CLOSE|     | TAB |     |                          |     |HOME |     | END |scrl+|PG_UP|
-// |     | SEL |SAVE |DUPE |FIND |     |___________    ___________|FLD- |  ←  |  ↑  |  →  |FLD+ | RET |
-// |     |cUNDO|sCUT |aCOPY|PASTE|     |     |     |  |     |     |     |BSPC |  ↓  | DEL |scrl-|PG_DN|
+// |     |     |CLOSE|     | RLD | TAB |                          |PG_UP|HOME |     | END |scrl+|     |
+// |     | SEL |SAVE |DUPE |FIND |     |___________    ___________|sTAB |  ←  |  ↑  |  →  | TAB | RET |
+// |     |cUNDO|sCUT |aCOPY|PASTE|     |     |     |  |     |     |PG_DN|BSPC |  ↓  | DEL |scrl-|     |
 //                   |     |     |     |     |     |  |     |     |     |     |     |
-//                      ◌                                                      ← ◌ →
+//                      ◌                                                      ↑ ◌ ↓
 
-	&trans    &trans          &kp LC(W)       &trans         &trans    &kp LC(T)                                        &trans      &kp HOME  &trans      &kp END     &kp K_SCROLL_UP   &kp PG_UP
+	&trans    &trans          &kp LC(W)       &trans         &kp LC(R) &kp LC(T)                                        &kp PG_UP   &kp HOME  &trans      &kp END     &kp K_SCROLL_UP   &trans
 	&trans    &kp LC(A)       &kp LC(S)       &kp LC(D)      &kp LC(F) &trans                                           &kp LS(TAB) &kp LEFT  &kp UP      &kp RIGHT   &kp TAB           &kp RET
-	&trans    &hm LCTRL LC(Z) &hm LSHFT LC(X) &hm LALT LC(C) &kp LC(V) &trans   &trans    &trans    &trans    &trans    &trans      &kp BSPC  &kp DOWN    &kp DEL     &kp K_SCROLL_DOWN &kp PG_DN
+	&trans    &hm LCTRL LC(Z) &hm LSHFT LC(X) &hm LALT LC(C) &kp LC(V) &trans   &trans    &trans    &trans    &trans    &kp PG_DN   &kp BSPC  &kp DOWN    &kp DEL     &kp K_SCROLL_DOWN &trans
 	                                          &trans         &trans    &trans   &trans    &trans    &trans    &trans    &trans      &trans    &trans
 			>;
 
-			sensor-bindings = <&inc_dec_kp F24 F24 &inc_dec_kp LEFT RIGHT>;
+			sensor-bindings = <&inc_dec_kp F24 F24 &inc_dec_kp UP DOWN>;
 		};
 
 
@@ -121,19 +121,19 @@
 			bindings = <
 
 //  ___________________________________           NUMBERS         ____________________________________ 
-// |  `  |  !  |  +  |  [  |  ]  |  =  |                          |  ^  |  7  |  8  |  9  |  *  |  /  |
-// |  #  |  @  |  _  |  (  |  )  |  -  |___________    ___________|  %  |  4  |  5  |  6  |  +  |     |
-// |  ~  |  \  |  &  |  {  |  }  |  |  |     |     |  |     |     |  $  |  1  |  2  |  3  |  -  |     |
+// |     |     |     |     |     |     |                          |  €  |  7  |  8  |  9  |  *  |  /  |
+// |     |     |     |     |     |     |___________    ___________|  %  |  4  |  5  |  6  |  +  |     |
+// |     |     |     |     |     |     |     |     |  |     |     |  $  |  1  |  2  |  3  |  -  |     |
 //                   |     |     |     |     |     |  |     |     |  0  |  .  |     |
-//                      ◌                                                        ◌ 
+//                      ◌                                                   tabL ◌ tabR
 
-	&kp GRAVE &kp EXCL &kp PLUS  &kp LBKT &kp RBKT &kp EQUAL                             &kp CARET &kp N7 &kp N8 &kp N9 &kp KP_MULTIPLY &kp KP_DIVIDE
-	&kp HASH  &kp AT   &kp UNDER &kp LPAR &kp RPAR &kp MINUS                             &kp PRCNT &kp N4 &kp N5 &kp N6 &kp KP_PLUS     &trans    
-	&kp TILDE &kp BSLH &kp AMPS  &kp LBRC &kp RBRC &kp PIPE &trans &trans  &trans &trans &kp DLLR  &kp N1 &kp N2 &kp N3 &kp KP_MINUS    &trans
-	                       &trans  &trans   &trans          &trans &trans  &trans &trans &kp N0    &kp DOT    &trans
+	&trans &trans &trans &trans &trans &trans                              &kp RA(N5) &kp N7 &kp N8 &kp N9 &kp KP_MULTIPLY &kp KP_DIVIDE
+	&trans &trans &trans &trans &trans &trans                              &kp PRCNT  &kp N4 &kp N5 &kp N6 &kp KP_PLUS     &trans    
+	&trans &trans &trans &trans &trans &trans &trans &trans  &trans &trans &kp DLLR   &kp N1 &kp N2 &kp N3 &kp KP_MINUS    &trans
+	                     &trans &trans &trans &trans &trans  &trans &trans &kp N0     &kp DOT    &trans
 			>;
 
-			sensor-bindings = <&inc_dec_kp F24 F24 &inc_dec_kp F24 F24>;
+			sensor-bindings = <&inc_dec_kp F24 F24 &inc_dec_kp LS(TAB) TAB>;
 		};
 
 
@@ -143,16 +143,16 @@
             bindings = <
 
 //  ___________________________________           SYMBOLS          ___________________________________ 
-// |     |  <  |  [  |  {  |  (  |  /  |                          |  \  |  )  |  }  |  ]  |  >  |     |
-// |  <  |  #  |  *  |  +  |  _  |  @  |___________    ___________|  &  |  -  |  =  |  ^  |  $  |  >  |
-// |     |  %  |  !  |  `  |  :  |  '  |  `  |     |  |     |     |  "  |  ;  |  ~  |  ?  |  |  |     |
-//                   | MUT |     |     |     |     |  |     |     |     |     | F14 |
+// |     |     |     |  *  |     |     |                          |  €  |  {  |  }  |     |     |     |
+// |     |  #  |  ^  |  _  |  -  |     |___________    ___________|  %  |  (  |  )  |  =  |  :  |     |
+// |     |     |  &  |  @  |  +  |     |     |     |  |     |     |  $  |  [  |  ]  |  ~  |  !  |  `  |
+//                   |     |     |     |     |     |  |     |     |     |     | F14 |
 //                      ◌                                                        ◌ 
 
-    &trans &kp LT    &kp LBKT  &kp LBRC   &kp LPAR  &kp FSLH                                &kp BSLH &kp RPAR  &kp RBRC  &kp RBKT  &kp GT   &trans
-    &kp LT &kp HASH  &kp STAR  &kp PLUS   &kp UNDER &kp AT                                  &kp AMPS &kp MINUS &kp EQUAL &kp CARET &kp DLLR &kp GT
-    &trans &kp PRCNT &kp EXCL  &kp GRAVE  &kp COLON &kp APOS  &gresc  &trans  &trans &trans &kp DQT  &kp SEMI  &kp TILDE &kp QMARK &kp PIPE &trans
-                               &kp C_MUTE &trans    &trans    &trans  &trans  &trans &trans &trans   &trans    &kp F14
+    &trans &trans    &kp PRCNT &kp STAR   &trans    &trans                                  &kp RA(N5) &kp LBRC  &kp RBRC &trans    &trans    &trans
+    &trans &kp HASH  &kp CARET &kp UNDER  &kp MINUS &trans                                  &kp PRCNT  &kp LPAR  &kp RPAR &kp EQUAL &kp COLON &trans
+    &trans &trans    &kp AMPS  &kp AT     &kp PLUS  &trans    &trans  &trans  &trans &trans &kp DLLR   &kp LBKT  &kp RBKT &kp TILDE &kp EXCL  &gresc
+                               &trans     &trans    &trans    &trans  &trans  &trans &trans &trans     &trans    &kp F14
             >;
 
             sensor-bindings = <&inc_dec_kp F24 F24  &inc_dec_kp F24 F24>;
@@ -166,13 +166,13 @@
 //  ___________________________________          FUNCTIONS         ___________________________________ 
 // |TASK | F2  |mute | V+  | stp |  @  |                          | F12 | F7  | F8  | F9  |Print|     |
 // |SNIP |caps |Prev | V-  |Next | @p  |___________    ___________| F11 | F4  | F5  | F6  | Ins |     |
-// |CAPSW|/Ble |Ble0 |Ble1 |Ble2 |Ble3 |Ble4 |     |  |     |     | F10 | F1  | F2  | F3  |     |FIXV |
+// |FIXV |/Ble |Ble0 |Ble1 |Ble2 |Ble3 |Ble4 |     |  |     |     | F10 | F1  | F2  | F3  |     |     |
 //                   |PLAYP|     |     |     |     |  |     |     |     |     |     |
 //                      ◌                                                        ◌ 
 
 	&kp LC(LS(ESC)) &kp F2     &kp C_MUTE   &kp C_VOL_UP &kp C_STOP   &trans                                                 &kp F12 &kp F7 &kp F8 &kp F9 &kp PSCRN &trans
 	&kp LS(LG(S))   &kp CAPS   &kp C_PREV   &kp C_VOL_DN &kp C_NEXT   &trans                                                 &kp F11 &kp F4 &kp F5 &kp F6 &kp INS   &trans
-	&caps_word      &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &out OUT_TOG  &trans  &trans &kp F10 &kp F1 &kp F2 &kp F3 &trans    &kp LA(LG(C))
+	&kp LA(LG(C))   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &out OUT_TOG  &trans  &trans &kp F10 &kp F1 &kp F2 &kp F3 &trans    &trans
 	                                      &kp C_PP     &trans       &trans       &trans       &trans        &trans  &trans &trans  &trans &trans
 			>;
 
