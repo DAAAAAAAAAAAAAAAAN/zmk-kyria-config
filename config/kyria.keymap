@@ -147,7 +147,7 @@
 // |     |  #  |  ^  |  _  |  -  |     |___________    ___________|  %  |  (  |  )  |  =  |  :  |     |
 // |     |     |  &  |  @  |  +  |     |     |     |  |     |     |  $  |  [  |  ]  |  ~  |  !  |  `  |
 //                   |     |     |     |     |     |  |     |     |     |     | F14 |
-//                      ◌                                                        ◌ 
+//                      ◌                                                      ← ◌ →
 
     &trans &trans   &kp PRCNT &kp STAR  &trans    &trans                              &kp RA(N5) &kp LBRC &kp RBRC &trans    &trans    &trans
     &trans &kp HASH &kp CARET &kp UNDER &kp MINUS &trans                              &kp PRCNT  &kp LPAR &kp RPAR &kp EQUAL &kp COLON &trans
@@ -155,7 +155,7 @@
                               &trans    &trans    &trans &trans &trans  &trans &trans &trans     &trans   &kp F14
             >;
 
-            sensor-bindings = <&inc_dec_kp F24 F24  &inc_dec_kp F24 F24>;
+            sensor-bindings = <&inc_dec_kp F24 F24  &inc_dec_kp LEFT RIGHT>;
         };
 
 
