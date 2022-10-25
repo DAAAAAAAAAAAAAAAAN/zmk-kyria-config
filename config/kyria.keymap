@@ -106,9 +106,9 @@
 //                   |     |     |     |     |     |  |     |     |     |     |     |
 //                      ◌                                                      ↑ ◌ ↓
 
-	&trans &trans          &kp LC(W)       &trans         &kp LC(R) &kp LC(T)                             &kp PG_UP   &kp HOME &trans   &kp END   &kp K_SCROLL_UP   &trans
-	&trans &kp LC(A)       &kp LC(S)       &kp LC(D)      &kp LC(F) &trans                                &kp LS(TAB) &kp LEFT &kp UP   &kp RIGHT &kp TAB           &kp RET
-	&trans &hm LCTRL LC(Z) &hm LSHFT LC(X) &hm LALT LC(C) &kp LC(V) &trans   &trans &trans  &trans &trans &kp PG_DN   &kp BSPC &kp DOWN &kp DEL   &kp K_SCROLL_DOWN &trans
+	&trans &trans          &kp LC(W)       &trans         &kp LC(R) &kp LC(T)                             &kp PG_UP   &kp HOME &trans   &kp END   &kp C_AC_SCROLL_UP   &trans
+	&trans &kp LC(A)       &kp LC(S)       &kp LC(D)      &kp LC(F) &trans                                &kp LS(TAB) &kp LEFT &kp UP   &kp RIGHT &kp TAB              &kp RET
+	&trans &hm LCTRL LC(Z) &hm LSHFT LC(X) &hm LALT LC(C) &kp LC(V) &trans   &trans &trans  &trans &trans &kp PG_DN   &kp BSPC &kp DOWN &kp DEL   &kp C_AC_SCROLL_DOWN &trans
 	                                       &trans         &trans    &trans   &trans &trans  &trans &trans &trans      &trans   &trans
 			>;
 
@@ -151,7 +151,7 @@
 
     &trans &trans   &kp PRCNT &kp STAR  &trans    &trans                              &kp RA(N5) &kp LBRC &kp RBRC &trans    &trans    &trans
     &trans &kp HASH &kp CARET &kp UNDER &kp MINUS &trans                              &kp PRCNT  &kp LPAR &kp RPAR &kp EQUAL &kp COLON &trans
-    &trans &trans   &kp AMPS  &kp AT    &kp PLUS  &trans &trans &trans  &trans &trans &kp DLLR   &kp LBKT &kp RBKT &kp TILDE &kp EXCL  &gresc
+    &trans &trans   &kp AMPS  &kp AT    &kp PLUS  &trans &trans &trans  &trans &trans &kp DLLR   &kp LBKT &kp RBKT &kp TILDE &kp EXCL  &kp GRAVE
                               &trans    &trans    &trans &trans &trans  &trans &trans &trans     &trans   &kp F14
             >;
 
